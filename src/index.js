@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
 const routes = require('./routes');
 
 // Tipos de parâmetros:
@@ -15,6 +16,7 @@ mongoose.connect('mongodb+srv://omnistackroot:omnistackroot@cluster0-wlyeh.mongo
     useUnifiedTopology: true,
 })
 
+app.use(cors())
 app.use(express.json());
 app.use(routes)
 

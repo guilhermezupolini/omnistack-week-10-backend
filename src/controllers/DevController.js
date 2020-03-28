@@ -9,6 +9,8 @@ module.exports = {
 
     async store (request, response) {
         const dev = await DevService.store(request.body);
+        console.log(response.status);
+        
         return response.json(dev);
     }
 };
